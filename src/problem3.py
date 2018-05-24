@@ -2,9 +2,9 @@
 Final exam, problem 3.
 
 Authors: David Mutchler, Dave Fisher, Matt Boutell, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.  May 2018.
+         their colleagues and Madison Robertson.  May 2018.
 
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import rosegraphics as rg
 import time
@@ -93,10 +93,49 @@ def problem3(point, circle1, circle2, window):
       :type window:    rg.RoseWindow
     """
     # ------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
+    # DONE: 2. Implement and test this function.
     #          Tests have been written for you (above).
     # ------------------------------------------------------------------
 
+    point.attach_to(window)
+    circle1.attach_to(window)
+    circle2.attach_to(window)
+    start = point
+    end = rg.Point(circle1.center.x, circle1.center.y)
+    line = rg.Line(start, end)
+    line.color = circle1.fill_color
+    line.attach_to(window)
+    start2 = rg.Point(circle2.center.x, circle2.center.y)
+    line2 = rg.Line(end, start2)
+    line2.color = circle1.fill_color
+    line2.attach_to(window)
+    line3 = rg.Line(start2, start)
+    line3.color = circle1.fill_color
+    line3.attach_to(window)
+
+    x = ((circle1.center.x - point.x)*.5) + point.x
+    y = ((circle1.center.y - point.y)*.5) + point.y
+    start4 = rg.Point(x, y)
+    x2 = ((circle2.center.x - circle1.center.x)*.5) + circle1.center.x
+    y2 = ((circle2.center.y - circle1.center.y)*.5) + circle1.center.y
+    end4 = rg.Point(x2, y2)
+    line4 = rg.Line(start4, end4)
+    line4.attach_to(window)
+    line4.color = circle2.fill_color
+
+    x3 = ((circle2.center.x - point.x)*.5)+point.x
+    y3 = ((circle2.center.y - point.y)*.5)+point.y
+    end5 = rg.Point(x3, y3)
+    line5 = rg.Line(end4, end5)
+    line5.attach_to(window)
+    line5.color = circle2.fill_color
+
+    line6 = rg.Line(end5, start4)
+    line6.attach_to(window)
+    line6.color = circle2.fill_color
+
+
+    window.render()
 
 # -----------------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
