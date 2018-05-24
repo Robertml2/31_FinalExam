@@ -88,8 +88,6 @@ And this one for n=14:
     #   (and then change the Xs back to spaces).
     # ------------------------------------------------------------------
     for k in range(n):
-        if k > 9:
-
         for l in range(n-k):
             print(' ', end = '')
         for q in range(k+1):
