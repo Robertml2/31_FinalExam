@@ -88,10 +88,23 @@ And this one for n=14:
     #   (and then change the Xs back to spaces).
     # ------------------------------------------------------------------
     for k in range(n):
-        for j in range(-k+n+1):
-            print('{:d} {:>} {:d}'.format(k, '*', -k -j +n, end =''))
-            print()
+        if k > 9:
 
+        for l in range(n-k):
+            print(' ', end = '')
+        for q in range(k+1):
+            print(q+1, end = '')
+        for g in range(1):
+            print(' ', end = '')
+        for s in range(k+1):
+            print('*', end= '')
+        for m in range(1):
+            print(' ', end = '')
+        for j in range(-k+n):
+            print(-k -j +n , end ='')
+
+
+        print()
 
 # ----------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
