@@ -407,10 +407,13 @@ def problem2c(x):
     # TODO: 4. Implement and test this function.
     #          Tests have been written for you (above).
     # -------------------------------------------------------------------------
-
+    new = x
     for k in range(sum_of_digits(x)):
-        if k >= is_prime(k):
-            return k
+        if is_prime(new) == False:
+            new = x +1
+        if is_prime(new) == True:
+            return new
+
 
 
 

@@ -32,7 +32,7 @@ def main():
     print(p1.get_weight())
     print(p1.eat(1))
     print(p1.eat_for_a_year())
-    other_pig = Pig(70000)
+    other_pig = Pig(700)
     print(p1.heavier_pig(other_pig))
     print(p1.new_pig(other_pig))
 
@@ -81,9 +81,9 @@ class Pig(object):
         """
         # DONE: Implement and test this method.
         if self.weight > other_pig.weight:
-            return self.weight
+            return self
         if self.weight < other_pig.weight:
-            return other_pig.weight
+            return other_pig
 
     def new_pig(self, other_pig):
         """
